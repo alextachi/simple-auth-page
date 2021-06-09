@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/simple-auth-page/static/css/main.04bca272.chunk.css",
+    "main.js": "/simple-auth-page/static/js/main.ca8fa967.chunk.js",
+    "main.js.map": "/simple-auth-page/static/js/main.ca8fa967.chunk.js.map",
+    "runtime-main.js": "/simple-auth-page/static/js/runtime-main.b3bb95ec.js",
+    "runtime-main.js.map": "/simple-auth-page/static/js/runtime-main.b3bb95ec.js.map",
+    "static/css/2.70c372c2.chunk.css": "/simple-auth-page/static/css/2.70c372c2.chunk.css",
+    "static/js/2.4cbdf6b9.chunk.js": "/simple-auth-page/static/js/2.4cbdf6b9.chunk.js",
+    "static/js/2.4cbdf6b9.chunk.js.map": "/simple-auth-page/static/js/2.4cbdf6b9.chunk.js.map",
+    "index.html": "/simple-auth-page/index.html",
+    "static/css/2.70c372c2.chunk.css.map": "/simple-auth-page/static/css/2.70c372c2.chunk.css.map",
+    "static/css/main.04bca272.chunk.css.map": "/simple-auth-page/static/css/main.04bca272.chunk.css.map",
+    "static/js/2.4cbdf6b9.chunk.js.LICENSE.txt": "/simple-auth-page/static/js/2.4cbdf6b9.chunk.js.LICENSE.txt",
+    "static/media/auth.scss": "/simple-auth-page/static/media/bg_tr_crop.263a8099.png",
+    "static/media/loading_anim.3314775c.svg": "/simple-auth-page/static/media/loading_anim.3314775c.svg",
+    "static/media/reddit_icon.93d74d4f.png": "/simple-auth-page/static/media/reddit_icon.93d74d4f.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b3bb95ec.js",
+    "static/css/2.70c372c2.chunk.css",
+    "static/js/2.4cbdf6b9.chunk.js",
+    "static/css/main.04bca272.chunk.css",
+    "static/js/main.ca8fa967.chunk.js"
+  ]
+}

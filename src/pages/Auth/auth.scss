@@ -1,0 +1,72 @@
+.auth {
+    padding: 50px 0 50px;
+    min-height: 100vh;
+    position: relative;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+
+    @media (min-width: 1200px) {
+        padding: 100px 0 80px;
+        min-height: 90vh;
+    }
+
+    @media (min-width: 1500px) {
+        //padding: 232px 0 220px;
+        min-height: 100vh;
+    }
+
+    &__bg {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+
+        background-repeat: no-repeat;
+        background-image: url(../../assets/images/bg_tr_crop.png);
+        background-size: contain;
+        background-position: bottom;
+
+        @media (min-width: 1200px) {
+            background-size: 58%;
+            background-image: url(../../assets/images/bg.svg);
+            background-size: cover;
+            background-position: top left;
+        }
+    }
+
+    &__form {
+        max-width: 480px;
+        margin: 0 auto;
+
+        &-wrap {
+            @media (min-width: 1200px) {
+                padding: 50px 20px;
+                background: #fff;
+                border-radius: 60px;
+            }
+        }
+    }
+
+    &-buttons {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__header {
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    &__title {
+        margin-bottom: 10px;
+    }
+
+    &__subtitle {
+        color: #969696;
+        line-height: 1.5;
+    }
+}

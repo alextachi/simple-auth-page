@@ -1,0 +1,63 @@
+$border-color: #dbe0e6;
+.button {
+    display: block;
+    padding: 15px 20px;
+    width: 100%;
+    border-radius: 30px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+
+    background-color: #ab234a;
+    color: #fff;
+
+    transition: color, background-color .25s ease-in;
+
+    outline: none;
+    text-decoration: none !important;
+
+    &:disabled {
+        opacity: .5;
+        user-select: none;
+        pointer-events: none;
+    }
+
+    &:hover {
+        background-color: #d82a5c;
+    }
+
+    
+    //Primary button styles
+    &--primary {
+        background-color: transparent;
+        border: 1px solid $border-color;
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+
+    //Icon button styles
+    &--with-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 20px;
+        padding: 2px;
+        background-color: #fff;
+
+        &:hover {
+            background-color: #fff;
+            img {
+                opacity: .8;
+            }
+        }
+
+        img {
+            height: 45px;
+            width: 45px;
+            object-fit: contain;
+            vertical-align: middle;
+            transition: opacity .25s ease-in;
+        }
+    }
+}

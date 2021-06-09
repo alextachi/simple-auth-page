@@ -1,0 +1,10 @@
+{
+    "user": {
+        "email": "jonn@earth.com",
+        "password": "thisisNotPassword",
+        "full_name": "J'onn J'onzz",
+        "height": "200 cm",
+        "weight": "136 kg",
+        "debut": "Detective Comics #225 (ноябрь 1955)"
+    }
+}

@@ -17,7 +17,7 @@ export const setUserLoaded = (isLoaded) => ({
 
 export const authUser = (email, password) => (dispatch) => {
     setUserLoaded(false);
-    axios.get('/db.json')
+    axios.get('https://cdn.webdepo.tech/db.json')
         .then(({ data }) => {
             const userData = data.user;
             /**

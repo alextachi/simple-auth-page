@@ -1,9 +1,11 @@
+import emailValidator from 'email-validator';
+
 const validateField = (fieldName, value) => {
     let formErrors = {};
 
     switch (fieldName) {
         case 'email':
-            if (!value.toLowerCase().match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)) {
+            if (!emailValidator.validate(value)) {
                 formErrors.email = { valid: false, message: 'Please enter a valid email address' };
             } else {
                 formErrors.email = { valid: true, message: null };

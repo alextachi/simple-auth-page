@@ -4,7 +4,7 @@ import produce from "immer"
 const INITIAL_STATE = {
     data: null,
     isAuth: false,
-    userLoaded: false
+    userLoading: false
 }
 
 
@@ -18,8 +18,8 @@ const usersReducer = (state = INITIAL_STATE, action) =>
             case 'USER:SET_AUTH':
                 draft.isAuth = action.payload;
                 break;
-            case 'USER:SET_USER_LOADED':
-                draft.userLoaded = action.payload;
+            case 'USER:SET_USER_LOADING':
+                draft.userLoading = action.payload;
                 break;
             default:
                 break;

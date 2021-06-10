@@ -3,26 +3,27 @@ import { useSelector, useDispatch } from 'react-redux'
 import { RedditSimple } from 'reddit-simple'
 
 //Components
-import { Input, Button, MemePopup } from '../../components';
+import { Input, Button, MemePopup, LoadingButton } from '../../components';
 
 //Styles
 import './auth.scss';
 
 //Images
 import redditIcon from '../../assets/images/reddit_icon.png';
-import loadingGif from '../../assets/images/loading_anim.svg';
+
 
 //Utils
 import { validateField } from '../../utils/';
 
 //redux
-import { authUser} from '../../redux/actions/users';
+import { authUser } from '../../redux/actions/users';
 
 const Auth = () => {
 
     const dispatch = useDispatch();
     const userData = useSelector(({ user }) => user.data);
     const isAuth = useSelector(({ user }) => user.isAuth);
+    const userLoading = useSelector(({ user }) => user.userLoading);
 
     const [emailValid, setEmailValid] = useState(false);
     const [emailErrorMessage, setEmailErrorMessage] = useState(null);
@@ -69,15 +70,6 @@ const Auth = () => {
     }, [userData, isAuth]);
 
 
-    /**
-     * Catch meme 
-     */
-    useEffect(() => {
-        console.log(memeLoaded);
-
-    }, [memeLoaded]);
-
-
     const handleSubmit = (e) => {
         e.preventDefault();
         dispatch(authUser(email, password));
@@ -108,7 +100,7 @@ const Auth = () => {
 
     return (
         <section className="auth">
-            <MemePopup trigger={memeLoaded} imageURL={randomMemeUrl} onClose={handleCloseModal} />
+            <MemePopup isOpened={memeLoaded} imageURL={randomMemeUrl} onClose={handleCloseModal} />
             <div className="auth__bg"></div>
             <div className="auth__wrapper">
                 <div className="container">
@@ -144,8 +136,11 @@ const Auth = () => {
                                             setPassword(event.target.value)
                                         }} />
                                     <br />
-                                    <div className="input__field">
-                                        <Button disabled={!formValid} submit>Log in</Button>
+                                    <div className="buttons__field">
+                                        {userLoading
+                                            ? <LoadingButton />
+                                            : <Button disabled={!formValid} submit>Log in</Button>
+                                        }
                                     </div>
 
                                     <div className="input__field">
@@ -157,7 +152,7 @@ const Auth = () => {
                                 <br />
                                 <div className="auth-buttons">
                                     {isMemeLoading ?
-                                        <img src={loadingGif} className="loading-image" alt="Loading"/>
+                                        <LoadingButton />
                                         :
                                         <Button primary icon title="Find random reddit meme" onClick={loadRandomMeme}>
                                             <img src={redditIcon} alt="Reddit icon" />

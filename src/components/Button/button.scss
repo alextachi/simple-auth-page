@@ -61,3 +61,11 @@ $border-color: #dbe0e6;
         }
     }
 }
+
+.buttons {
+    &__field {
+        margin-bottom: 20px;
+        height: 50px;
+        text-align: center;
+    }
+}

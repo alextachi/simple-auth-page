@@ -10,13 +10,13 @@ export const setIsAuth = (auth) => ({
     payload: auth
 });
 
-export const setUserLoaded = (isLoaded) => ({
-    type: 'USER:SET_USER_LOADED',
+export const setUserLoading = (isLoaded) => ({
+    type: 'USER:SET_USER_LOADING',
     payload: isLoaded
 });
 
 export const authUser = (email, password) => (dispatch) => {
-    setUserLoaded(false);
+    dispatch(setUserLoading(true));
     axios.get('https://cdn.webdepo.tech/db.json')
         .then(({ data }) => {
             const userData = data.user;
@@ -24,23 +24,26 @@ export const authUser = (email, password) => (dispatch) => {
              * Incorrect validation of user information without backend
              * Query goes to simple JSON file {user {}}
              */
-            if (email.toLowerCase().trim() === userData.email && userData.password === password) {
-                console.log("Authorized");
-                dispatch(setUser(userData));
-                dispatch(setIsAuth(true));
-                dispatch(setUserLoaded(true));
-            } else {
-                console.log("NOT OK");
-                dispatch(setUser(null));
-                dispatch(setIsAuth(false));
-                dispatch(setUserLoaded(true));
-                alert("Wrong password or email!");
-            }
+            setTimeout(() => {
+                if (email.toLowerCase().trim() === userData.email && userData.password === password) {
+                    console.log("Authorized");
+                    dispatch(setUser(userData));
+                    dispatch(setIsAuth(true));
+                    dispatch(setUserLoading(false));
+                } else {
+                    console.log("NOT OK");
+                    dispatch(setUser(null));
+                    dispatch(setIsAuth(false));
+                    dispatch(setUserLoading(false));
+                    alert("Wrong password or email!");
+                }
+            }, 1000);
         })
         .catch(err => {
             console.log(err);
             dispatch(setUser(null));
             dispatch(setIsAuth(false));
-            dispatch(setUserLoaded(true));
+            dispatch(setUserLoading(false));
+            alert('Bad request. Please try later');
         });
 };

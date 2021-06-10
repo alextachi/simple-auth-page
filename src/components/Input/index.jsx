@@ -11,7 +11,7 @@ const Auth = ({ inputType, inputName, labelText, errorMessage, onInputHandler })
         })}>
             <label className="input__label">
                 <span className="input__label-text">{labelText}</span>
-                <input className="input" type={inputType} name={inputName} onKeyUp={(event) => { onInputHandler(event) }} />
+                <input className="input" type={inputType} name={inputName} onChange={(event) => { onInputHandler(event) }} />
             </label>
             {errorMessage &&
                 <div className="input__error-message">{errorMessage}</div>
